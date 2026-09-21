@@ -3,6 +3,8 @@ import { NodeSDK } from '@opentelemetry/sdk-node'
 import { HttpInstrumentation } from '@opentelemetry/instrumentation-http'
 import { UndiciInstrumentation } from '@opentelemetry/instrumentation-undici'
 import { MySQL2Instrumentation } from '@opentelemetry/instrumentation-mysql2'
+import { PgInstrumentation } from '@opentelemetry/instrumentation-pg'
+import { IORedisInstrumentation } from '@opentelemetry/instrumentation-ioredis'
 import { ConsoleInstrumentation } from '@opentelemetry/instrumentation-console'
 import { RuntimeNodeInstrumentation } from '@opentelemetry/instrumentation-runtime-node'
 import { HostMetricsInstrumentation } from '@opentelemetry/instrumentation-host-metrics'
@@ -20,6 +22,8 @@ const sdk = new NodeSDK({
     new HttpInstrumentation(),
     new UndiciInstrumentation(),
     new MySQL2Instrumentation(),
+    new PgInstrumentation(),
+    new IORedisInstrumentation(),
     new RuntimeNodeInstrumentation(),
     new HostMetricsInstrumentation({ metricGroups: ['process.cpu', 'process.memory'] }),
   ],
