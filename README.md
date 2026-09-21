@@ -20,3 +20,12 @@ In SigNoz, select service **hono** and the last 15 minutes:
 - Instrumentation emits `db.system.name = mysql`; the pane expects legacy `db.system`. Related: [#8164](https://github.com/SigNoz/signoz/issues/8164).
 
 Route: `nodejs/src/index.ts`. Instrumentation: `nodejs/telemetry.mjs`. MySQL uses port **3309**, database/user/password **app**.
+
+### How I self-hosted Signoz
+
+Under `telemetry/` folder is only Signoz. I wrote the `./telemetry/casting.yml` and ran
+
+```sh
+foundryctl cast -f casting.yaml
+```
+That's it.
