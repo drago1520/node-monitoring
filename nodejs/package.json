@@ -2,9 +2,7 @@
   "name": "src",
   "type": "module",
   "scripts": {
-    "dev": "tsx watch --import ./telemetry.mjs src/index.ts",
-    "build": "tsc",
-    "start": "node --import ./telemetry.mjs dist/index.js"
+    "dev": "tsx watch --import ./telemetry.mjs src/index.js"
   },
   "dependencies": {
     "@hono/node-server": "^2.1.1",
