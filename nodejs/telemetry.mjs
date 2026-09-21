@@ -2,6 +2,7 @@ import { register } from 'import-in-the-middle/register-hooks.mjs'
 import { NodeSDK } from '@opentelemetry/sdk-node'
 import { HttpInstrumentation } from '@opentelemetry/instrumentation-http'
 import { UndiciInstrumentation } from '@opentelemetry/instrumentation-undici'
+import { MySQL2Instrumentation } from '@opentelemetry/instrumentation-mysql2'
 import { ConsoleInstrumentation } from '@opentelemetry/instrumentation-console'
 import { RuntimeNodeInstrumentation } from '@opentelemetry/instrumentation-runtime-node'
 import { HostMetricsInstrumentation } from '@opentelemetry/instrumentation-host-metrics'
@@ -18,6 +19,7 @@ const sdk = new NodeSDK({
     new ConsoleInstrumentation(),
     new HttpInstrumentation(),
     new UndiciInstrumentation(),
+    new MySQL2Instrumentation(),
     new RuntimeNodeInstrumentation(),
     new HostMetricsInstrumentation({ metricGroups: ['process.cpu', 'process.memory'] }),
   ],

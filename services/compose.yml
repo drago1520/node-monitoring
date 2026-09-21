@@ -1,0 +1,38 @@
+services:
+  node-monitoring-postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: app
+      POSTGRES_DB: app
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+  node-monitoring-mysql:
+    image: mysql:8.4
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: app
+      MYSQL_USER: app
+      MYSQL_PASSWORD: app
+    ports:
+      - "127.0.0.1:3309:3306"
+    volumes:
+      - mysql:/var/lib/mysql
+
+  node-monitoring-redis:
+    image: redis:7
+    ports:
+      - "127.0.0.1:6370:6379"
+    volumes:
+      - redis:/data
+
+volumes:
+  postgres:
+    name: node-monitoring-postgres
+  mysql:
+    name: node-monitoring-mysql
+  redis:
+    name: node-monitoring-redis
