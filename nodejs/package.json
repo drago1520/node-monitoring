@@ -16,7 +16,7 @@
     "@opentelemetry/instrumentation-runtime-node": "^0.35.0",
     "@opentelemetry/instrumentation-undici": "^0.32.0",
     "@opentelemetry/sdk-node": "^0.222.0",
-    "hono": "^4.13.8",
+    "hono": "^4.13.13",
     "ioredis": "^6.0.0",
     "mysql2": "^3.24.4",
     "pg": "^8.23.0"
